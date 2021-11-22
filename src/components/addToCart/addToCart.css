@@ -1,0 +1,46 @@
+.add-to-cart form{
+    display: flex;
+    position: relative;
+    border-radius: 9999px;
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 3rem;
+    margin: 0 0;
+    padding: 5px;
+}
+
+.add-to-cart form input{
+    background-color: transparent;
+    flex-grow: 1;
+    text-align: center;
+    width: 65%; 
+    height: auto;
+    border: none;
+}
+
+.add-to-cart form input:focus{
+    
+  border-bottom: none !important;
+-webkit-box-shadow: none !important;
+box-shadow: none !important;
+}
+
+.add-to-cart form button{
+    position: relative;
+    display: block;
+    color: white;
+  width: 32px;
+  height: 32px;
+  padding: auto;
+  border: none;
+  border-radius: 9999px;
+}
+
+.add-to-cart form button.remove-btn{
+    background-color: red;
+}
+
+.add-to-cart form button.add-btn{
+    background-color: green;
+}
+

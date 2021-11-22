@@ -1,0 +1,17 @@
+.new-section div.container{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+}
+
+.new-section .products{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.new-section title{
+    width: 100%;
+    display: block;
+}

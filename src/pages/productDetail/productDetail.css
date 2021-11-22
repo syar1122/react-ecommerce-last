@@ -1,0 +1,22 @@
+.product-detail{
+    position: relative;
+    display: flex;
+}
+
+.product-detail .img-wrapper{
+    padding: 5px;
+    margin-top: 5px;
+
+}
+
+.product-detail .img-wrapper img{
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.product-detail .detail-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    
+}

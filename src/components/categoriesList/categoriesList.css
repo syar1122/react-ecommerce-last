@@ -1,0 +1,29 @@
+.dropdown-btn ul{
+    position: relative;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 1;
+}
+
+
+.drp-header{
+    padding: 0 15px;
+}
+
+.dropdown-btn ul a{
+    color: black;
+    line-height: 3rem;
+    position: relative;
+    margin: 0;
+    padding-left: 1rem;
+    transition: all .2s ease;
+}
+
+.dropdown-btn ul li:hover{
+ 
+    transform: scaleY(1.02);
+    
+}

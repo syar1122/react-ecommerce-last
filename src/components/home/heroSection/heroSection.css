@@ -1,0 +1,27 @@
+.hero-section.container{
+    width: 100% !important;
+    max-width: 100%;
+    height: calc(100vh - 64px);
+    margin:0;
+    padding: 0;
+    position: relative;
+    background-image: url("//cdn.allbirds.com/image/upload/f_auto,q_auto,w_2500/cms/XewdP1GuQFGZH2Y3mdyk3/18bff1f36b46a239d860bb9149341bf6/11.6__Gifting_Wool_Core_Hero_2.jpg");
+    background-size: cover;
+}
+
+.hero-section .content{
+    width: fit-content;
+    max-width: 40rem;
+    margin:2rem;
+    bottom: 1rem;
+    left: 1rem;
+    border-radius: 1rem;
+    position: absolute;
+    text-align: left;
+    padding: 0 2rem;
+    background-color: rgba(50, 50, 50, 0.4);
+}
+
+.hero-section .content button{
+    margin:2rem 0px;
+}

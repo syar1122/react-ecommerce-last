@@ -1,0 +1,17 @@
+.trending-section div.container{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+}
+
+.trending-section .products{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.trending-section title{
+    width: 100%;
+    display: block;
+}

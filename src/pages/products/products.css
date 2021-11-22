@@ -1,0 +1,55 @@
+.container{
+    width: 90% !important;
+    align-items: center;
+}
+
+.product-list{
+    margin: 0;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list .card{
+    
+    margin: 1rem;
+    width: 25%;
+    height: 30rem;
+}
+
+.product-list .card .card-content{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-list .card .card-image{
+    height: 50%;
+    overflow: hidden;
+    
+}
+
+
+.product-list .card .card-image .card-title{
+    font-size: 1em;
+    font-weight: 600;
+    padding: .8rem;
+    left: .5rem;
+    bottom: .5rem;
+    border-radius: .5rem;
+    background-color: #1e201f79;
+}
+.product-list .card .card-image image{
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-list .card .spacer{
+    flex-grow: 1;
+}
+
+
+
