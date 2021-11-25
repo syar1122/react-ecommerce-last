@@ -1,0 +1,18 @@
+div.actions{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+div.actions .btn,.btn-flat{
+    margin: .5rem;
+}
+
+.actions div.sum{
+    text-align: end;
+    flex-grow: 1;
+}
+
+.actions div.sum h5{
+    margin: .5rem 0;
+}

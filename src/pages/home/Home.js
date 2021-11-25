@@ -1,11 +1,12 @@
 import React from "react";
-import HeroSection from "../../components/home/heroSection/HeroSection";
-import NewArrives from "../../components/home/newArivesProducts/NewArrives";
-import TrendingSection from "../../components/home/trendingProducts/TrendingSection";
+import HeroSection from "../../components/heroSection/HeroSection";
+import NewArrives from "../../components/newArivesProducts/NewArrives";
+import PreLoade from "../../components/preLoader/PreLoade";
+import TrendingSection from "../../components/trendingProducts/TrendingSection";
 import { useGetProductsQuery } from "../../services/app.api";
 
 export default function Home() {
-  let { data, isLoading, error } = useGetProductsQuery();
+  let { data, isSuccess, isFetching, error } = useGetProductsQuery();
   let trendP;
   let newP;
   if (data) {
@@ -17,16 +18,16 @@ export default function Home() {
   console.log(newP, trendP);
 
   return (
-    <div>
-      {isLoading && "isLoading..."}
-      {data && (
+    <>
+      {isFetching && <PreLoade />}
+      {data && isSuccess && (
         <>
           <HeroSection />
           <TrendingSection products={trendP} />
           <NewArrives products={newP} />
         </>
       )}
-      {error && error.message}
-    </div>
+      {error && alert(error.message)}
+    </>
   );
 }

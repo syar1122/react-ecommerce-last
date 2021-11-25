@@ -9,9 +9,11 @@
 .new-section .products{
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .new-section title{
+    text-align: center;
     width: 100%;
     display: block;
 }

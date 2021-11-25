@@ -20,6 +20,7 @@ function App() {
         <Route path="products/:catName" element={<Products />} />
 
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="cart" element={<Cart />} />
       </Routes>
     </>

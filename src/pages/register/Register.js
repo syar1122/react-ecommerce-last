@@ -1,60 +1,106 @@
 import React, { useState } from "react";
-import {
-  useGetProductsQuery,
-  usePostRegisterMutation,
-} from "../../services/app.api";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
+import { usePostRegisterMutation } from "../../services/app.api";
 import "./register.css";
 
 export default function Register() {
-  let [onRegister, isLoading] = usePostRegisterMutation();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPasswor] = useState("");
 
-  const [uiClass, setUiClass] = useState("");
+  let [register, {}] = usePostRegisterMutation();
+  let navigate = useNavigate();
+
+  let handleSubmit = (e) => {
+    e.preventDefault();
+    let userObj = {
+      firstname: firstName,
+      lastname: lastName,
+      email: email,
+      password: password,
+    };
+    register(userObj)
+      .unwrap()
+      .then((data) => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
-    <div className="register-body">
-      <div id="wrapper" className={uiClass}>
-        <div className="register-btn" onClick={() => setUiClass("active")}>
-          Register
+    <div className="container">
+      <form
+        className="col s12"
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
+        <div className="row">
+          <div className="input-field col s6">
+            <input
+              id="first_name"
+              type="text"
+              className="validate"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
+            />
+            <label forhtml="first_name">First Name</label>
+          </div>
+          <div className="input-field col s6">
+            <input
+              id="last_name"
+              type="text"
+              className="validate"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+            />
+            <label forhtml="last_name">Last Name</label>
+          </div>
         </div>
 
-        <div className="register-form">
-          <div className="close-button" onClick={() => setUiClass("")}>
-            &#10008;
-          </div>
-          <div className="form-title">Create an account</div>
-          <div className="form-row">
-            <input type="email" id="email" />
-            <label htmlFor="email">Email Address</label>
-          </div>
-          <div className="form-row">
-            <input type="text" id="username" />
-            <label htmlFor="username">Username</label>
-          </div>
-          <div className="form-row">
-            <input type="password" id="password" />
-            <label htmlFor="password">Password</label>
-          </div>
-          <div className="form-row">
-            <input type="text" id="contact" />
-            <label htmlFor="contact">Contact Number</label>
-          </div>
-          <div
-            className="form-button"
-            onClick={() => {
-              onRegister({
-                firstname: "string",
-                lastname: "string",
-                email: "syar@test.com",
-                password: "12345",
-              })
-                .unwrap()
-                .then((fulfilled) => console.log(fulfilled))
-                .catch((rejected) => console.error(rejected));
-            }}
-          >
-            Sign Me Up
+        <div className="row">
+          <div className="input-field col s12">
+            <input
+              id="email"
+              type="email"
+              className="validate"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+            <label forhtml="email">Email</label>
           </div>
         </div>
-      </div>
+
+        <div className="row">
+          <div className="input-field col s12">
+            <input
+              id="password"
+              type="password"
+              className="validate"
+              value={password}
+              onChange={(e) => {
+                setPasswor(e.target.value);
+              }}
+            />
+            <label forhtml="password">Password</label>
+          </div>
+        </div>
+        <button type="submit" className="waves-effect waves-light btn">
+          SIGNUP
+        </button>
+        <pre>
+          Already have account? <Link to="/login">LOGIN</Link>
+        </pre>
+      </form>
     </div>
   );
 }

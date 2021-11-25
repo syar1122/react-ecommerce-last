@@ -9,6 +9,7 @@
 .trending-section .products{
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .trending-section title{

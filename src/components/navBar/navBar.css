@@ -3,5 +3,15 @@
     padding: 0px;
 }
 
+nav ul a.cart-link i{
+    display: inline;
+    text-align: center;
+
+}
+
+nav ul a.cart-link span.badge{
+    min-width: auto;
+}
+
 
 

@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { login } from "../../features/userSlice";
 import { useLoginMutation } from "../../services/app.api";
 import "./login.css";
 
 export default function Login() {
-  let [login, { isLoading, data, error }] = useLoginMutation();
+  let [loginF, { isLoading, data, error }] = useLoginMutation();
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   const token = localStorage.getItem("authToken");
 
   return (
-    <div className="container" style={{ height: "100vh" }}>
+    <div className="container">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -27,7 +33,7 @@ export default function Login() {
                 setEmail(e.target.value);
               }}
             />
-            <label forHtml="email">Email</label>
+            <label forhtml="email">Email</label>
           </div>
         </div>
         <div className="row">
@@ -41,21 +47,30 @@ export default function Login() {
                 setPassword(e.target.value);
               }}
             />
-            <label forHtml="password">Password</label>
+            <label forhtml="password">Password</label>
           </div>
         </div>
         <button
           className="waves-effect waves-light btn"
           onClick={() => {
-            login({
+            loginF({
               email: email,
               password: password,
-            });
+            })
+              .unwrap()
+              .then((data) => {
+                console.log("login global state", data);
+                dispatch(login(data.token));
+                navigate("/");
+              });
           }}
         >
           Login
         </button>
       </form>
+      <pre>
+        don't have account ? <Link to="/register">SIGNUP</Link>
+      </pre>
       {isLoading && "loging in"}
       {token && token}
       {data && localStorage.setItem("authToken", data.token)}

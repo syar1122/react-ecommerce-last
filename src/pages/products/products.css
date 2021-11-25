@@ -1,10 +1,11 @@
-.container{
-    width: 90% !important;
+div .products-page .container{
+    width: 100% !important;
     align-items: center;
 }
 
 .product-list{
     margin: 0;
+    width: 95%;
     align-items: center;
     display: flex;
     flex-flow: row wrap;
@@ -14,16 +15,20 @@
 
 .product-list .card{
     
-    margin: 1rem;
+    margin: .6rem;
     width: 25%;
     height: 30rem;
+    min-width: 15rem;
+
 }
 
 .product-list .card .card-content{
     display: flex;
+    position: relative;
+    padding: 5px 15px;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    height: 50%;
 }
 
 .product-list .card .card-image{
@@ -32,6 +37,9 @@
     
 }
 
+.card .card-content .spacer{
+    flex-grow: 1;
+}
 
 .product-list .card .card-image .card-title{
     font-size: 1em;
@@ -47,8 +55,17 @@
     object-position: center;
 }
 
-.product-list .card .spacer{
-    flex-grow: 1;
+.card .card-content .btn-flat:hover{
+    background-color: rgba(0,0,0,.1);
+}
+
+.card .card-content button.add-cart.btn {
+    margin-bottom: 5px;
+}
+
+.card .card-content button.remove-cart.btn {
+    background-color: red;
+    margin-bottom: 5px;
 }
 
 
