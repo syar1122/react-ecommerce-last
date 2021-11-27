@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import "./cartCount.css";
 
 export default function CartCount() {
-  let [cartCount, setCartCount] = useState(0);
   let [cartItem, setCartItem] = useState([]);
 
   let { cartItems } = useSelector((state) => state.cart);

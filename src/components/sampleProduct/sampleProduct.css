@@ -2,6 +2,8 @@
     margin: 1rem;
     width: 20rem;
     height: 20rem;
+    min-width: 280px;
+    min-height: 280px;
     overflow: hidden;
   position: relative;
   border-radius: 1rem;
@@ -16,4 +18,10 @@
 
 .sample-product-card:hover img{
   transform:scale(1.2) ;
+}
+
+@media (max-width:500px){
+  .sample-product-card{
+    margin: 1rem .5rem;
+  }
 }

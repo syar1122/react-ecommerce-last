@@ -12,6 +12,7 @@
 .hero-section .content{
     width: fit-content;
     max-width: 40rem;
+    min-width: 356px;
     margin:2rem;
     bottom: 1rem;
     left: 1rem;
@@ -24,4 +25,24 @@
 
 .hero-section .content button{
     margin:2rem 0px;
+}
+
+@media(max-width:500px) {
+
+    .hero-section.container{
+        height: 80vh;
+        background-size: cover;
+        background-position-x: center;
+        text-align: center;
+    }
+
+    .hero-section .content{
+        top:5rem;
+        left: initial;
+        bottom:initial;
+    }
+
+    .hero-section .content h2{
+        font-size: 2.5rem;
+    }
 }

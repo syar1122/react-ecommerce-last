@@ -12,7 +12,18 @@
     justify-content: center;
 }
 
-.trending-section title{
+.trending-section .title{
     width: 100%;
     display: block;
+}
+
+@media (max-width:500px){
+    .trending-section .products{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .trending-section .title{
+        text-align: center;
+    }
 }

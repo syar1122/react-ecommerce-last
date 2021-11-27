@@ -5,6 +5,7 @@
     background-color: #f1f1f1;
     width: 100%;
     max-width: 16rem;
+    min-width: 10rem;
     height: 3rem;
     margin: 0 0;
     padding: 5px;
@@ -45,3 +46,14 @@ box-shadow: none !important;
     background-color: green;
 }
 
+
+@media (max-width:500px) {
+    :root{
+        font-size: 14px;
+    }
+    .add-to-cart form button.add-btn .material-icons{
+        font-size: 1rem;}
+
+        .add-to-cart form button.remove-btn .material-icons{
+            font-size: 1rem;}
+}

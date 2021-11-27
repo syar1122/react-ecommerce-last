@@ -6,7 +6,7 @@ export default function NewArrives({ products }) {
   return (
     <div className="new-section">
       <div className="container">
-        <div className="title left">
+        <div className="title">
           <h3 className="header">New Arrives</h3>
         </div>
         <div className="products">

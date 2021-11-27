@@ -6,7 +6,7 @@ export default function TrendingSection({ products }) {
   return (
     <div className="trending-section">
       <div className="container">
-        <div className="title left">
+        <div className="title">
           <h3 className="header">Trending</h3>
         </div>
         <div className="products">

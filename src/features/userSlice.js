@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let token = localStorage.getItem("authToken");
+let token = localStorage.getItem("authToken") ?? "";
 let isAuth;
 if (token.length > 0) {
   isAuth = true;

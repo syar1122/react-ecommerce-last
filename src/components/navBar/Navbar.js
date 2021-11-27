@@ -20,7 +20,7 @@ export default function Navbar() {
         <Link to="/" className="brand-logo center">
           E-Commerce
         </Link>
-        <ul id="nav-mobile" className="left hide-on-med-and-down">
+        <ul id="nav-mobile" className="left hide-on-small-only">
           <li>
             <Link to="/">Home</Link>
           </li>

@@ -5,18 +5,17 @@ div .products-page .container{
 
 .product-list{
     margin: 0;
-    width: 95%;
-    align-items: center;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    
 }
 
 .product-list .card{
     
     margin: .6rem;
-    width: 25%;
+    width: 18rem;
     height: 30rem;
     min-width: 15rem;
 
@@ -68,5 +67,16 @@ div .products-page .container{
     margin-bottom: 5px;
 }
 
+@media(min-width:900px) {
+    .container .products{
+        width:90%;
+    }
+}
+
+@media(max-width:580px) {
+    .products-page .title{
+        text-align:center;
+    }
+}
 
 

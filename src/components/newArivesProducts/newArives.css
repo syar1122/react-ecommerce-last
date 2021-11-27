@@ -12,8 +12,18 @@
     justify-content: center;
 }
 
-.new-section title{
-    text-align: center;
+.new-section .title{
+    
     width: 100%;
     display: block;
+}
+
+@media (max-width:500px){
+    .new-section .products{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .new-section .title{
+        text-align: center;
+    }
 }

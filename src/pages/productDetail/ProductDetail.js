@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import Magnifire from "../../components/magnifire/Magnifire";
@@ -11,7 +11,7 @@ export default function ProductDetail() {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
   let { id } = useParams();
-  let { data, isFetching, error } = useGetProductByIdQuery(id);
+  let { data, isFetching } = useGetProductByIdQuery(id);
   let cartIdArray = [];
   cartItems.forEach((item) => {
     cartIdArray.push(item._id);
@@ -22,38 +22,47 @@ export default function ProductDetail() {
     <>
       {isFetching && <PreLoade />}
       {data && (
-        <div className="product-detail container">
-          <div className="img-wrapper">
-            {data && <Magnifire image={data.image} />}
-          </div>
-          <div className="detail-wrapper">
-            <h5>{data.name}</h5>
-            <span className="helper-text">{data.category}</span>
-            <h6>{`$  ${data.price}`}</h6>
+        <div className="container">
+          <div className="product-detail">
+            <div className="img-wrapper">
+              {data && <Magnifire image={data.image} />}
+            </div>
+            <div className="detail-wrapper">
+              <div className="detail-title">
+                <h5>{data.name}</h5>
+                <span
+                  class="helper-text"
+                  data-error="wrong"
+                  data-success="right"
+                >
+                  {data.category}
+                </span>
+              </div>
 
-            <p>{data.description}</p>
-            <div className="spacer"></div>
+              <h6>{`$  ${data.price}`}</h6>
 
-            {!cartIdArray.includes(data._id) ? (
-              <button
-                className="btn"
-                onClick={() => {
-                  let product = { ...data, count: 1 };
-                  dispatch(addToCart(product));
-                }}
-              >
-                ADD TO CART
-              </button>
-            ) : (
-              <button
-                className="btn red"
-                onClick={() => {
-                  dispatch(removeFromCart(data._id));
-                }}
-              >
-                REMOVE FROM CART
-              </button>
-            )}
+              <p>{data.description}</p>
+
+              {!cartIdArray.includes(data._id) ? (
+                <button
+                  className="btn"
+                  onClick={() => {
+                    let product = { ...data, count: 1 };
+                    dispatch(addToCart(product));
+                  }}
+                >
+                  ADD TO CART
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    dispatch(removeFromCart(data._id));
+                  }}
+                >
+                  REMOVE FROM CART
+                </button>
+              )}
+            </div>
           </div>
         </div>
       )}

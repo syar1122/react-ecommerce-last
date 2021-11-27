@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./products.css";
 
 import { useNavigate, useParams } from "react-router";
@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import PreLoade from "../../components/preLoader/PreLoade";
 
 export default function Products() {
-  let { data = [], isFetching, isSuccess, error } = useGetProductsQuery();
+  let { data = [], isFetching, isSuccess } = useGetProductsQuery();
   let { catName } = useParams();
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -35,53 +35,58 @@ export default function Products() {
     <>
       {isFetching && <PreLoade />}
       {isSuccess && data && (
-        <div className="products-page container">
-          <h4>{catName}</h4>
-          <div className="product-list">
-            {products &&
-              products.map((product, index) => {
-                return (
-                  <div class="card" key={index}>
-                    <div class="card-image">
-                      <img src={product.image} alt={product.name} />
-                      <span class="card-title">{`$ ${product.price} USD`}</span>
-                    </div>
-                    <div class="card-content">
-                      <h5>{product.name}</h5>
-                      <div className="spacer"></div>
-                      {cartProductId.includes(product._id) ? (
+        <div className="container products">
+          <div className="products-page">
+            <div className="title">
+              <h2>{catName}</h2>
+            </div>
+
+            <div className="product-list">
+              {products &&
+                products.map((product, index) => {
+                  return (
+                    <div class="card" key={index}>
+                      <div class="card-image">
+                        <img src={product.image} alt={product.name} />
+                        <span class="card-title">{`$ ${product.price} USD`}</span>
+                      </div>
+                      <div class="card-content">
+                        <h5>{product.name}</h5>
+                        <div className="spacer"></div>
+                        {cartProductId.includes(product._id) ? (
+                          <button
+                            className="remove-cart btn"
+                            onClick={() => {
+                              dispatch(removeFromCart(product._id));
+                            }}
+                          >
+                            remove
+                          </button>
+                        ) : (
+                          <button
+                            className="add-cart btn"
+                            onClick={() => {
+                              cartProductId.push(product._id);
+                              let cartProduct = { ...product, count: 1 };
+                              dispatch(addToCart(cartProduct));
+                            }}
+                          >
+                            Add to cart
+                          </button>
+                        )}
                         <button
-                          className="remove-cart btn"
+                          className="more-detail btn-flat"
                           onClick={() => {
-                            dispatch(removeFromCart(product._id));
+                            navigate(`/product/${product._id}`);
                           }}
                         >
-                          remove
+                          More Details ...
                         </button>
-                      ) : (
-                        <button
-                          className="add-cart btn"
-                          onClick={() => {
-                            cartProductId.push(product._id);
-                            let cartProduct = { ...product, count: 1 };
-                            dispatch(addToCart(cartProduct));
-                          }}
-                        >
-                          Add to cart
-                        </button>
-                      )}
-                      <button
-                        className="more-detail btn-flat"
-                        onClick={() => {
-                          navigate(`/product/${product._id}`);
-                        }}
-                      >
-                        More Details ...
-                      </button>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+            </div>
           </div>
         </div>
       )}

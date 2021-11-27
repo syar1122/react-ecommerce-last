@@ -10,7 +10,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPasswor] = useState("");
 
-  let [register, {}] = usePostRegisterMutation();
+  let [register] = usePostRegisterMutation();
   let navigate = useNavigate();
 
   let handleSubmit = (e) => {

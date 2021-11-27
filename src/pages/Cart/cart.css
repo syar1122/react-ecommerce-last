@@ -16,3 +16,18 @@ div.actions .btn,.btn-flat{
 .actions div.sum h5{
     margin: .5rem 0;
 }
+
+@media (max-width:500px){
+    table td h6{
+        font-size: .8rem;
+    }
+
+    div.actions{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    div.actions div.sum{
+        text-align: center;
+        order: 1;
+    }
+}
