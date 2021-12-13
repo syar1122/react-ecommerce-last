@@ -10,9 +10,9 @@ export default function NewArrives({ products }) {
           <h3 className="header">New Arrives</h3>
         </div>
         <div className="products">
-          <SampleProduct product={products[0]} />
-          <SampleProduct product={products[1]} />
-          <SampleProduct product={products[2]} />
+          {products.map((product, index) => {
+            return <SampleProduct product={product} key={index} />;
+          })}
         </div>
       </div>
     </div>

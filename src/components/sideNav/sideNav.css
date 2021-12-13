@@ -1,0 +1,54 @@
+div.sidenav{
+    height: 100vh;
+    background-color: #ee6e73;
+    color: white;
+    z-index: 99999;
+}
+
+.sidenav a.logo{
+    font-family: 'Corinthia', cursive;
+    font-weight: 700;
+    color: white;
+    font-size: 54px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    position: relative;
+}
+
+.sidenav .search{
+    display: flex;
+    width: 90%;
+    margin-top: 15px;
+}
+
+.sidenav .cat-header{
+    position: relative !important;
+    flex-direction: column;
+    justify-content: start;
+    height: auto;
+}
+
+.sidenav .cat-header a.dropdown-btn{
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    margin:5px 0;
+    padding: 15px 10px;
+}
+
+.sidenav .nav-section{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.sidenav .register-section{
+    display: flex;
+    
+}

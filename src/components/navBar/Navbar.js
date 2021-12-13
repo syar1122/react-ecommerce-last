@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { logout } from "../../features/userSlice";
 import CartCount from "../cartCount/CartCount";
 import CategoriesList from "../categoriesList/CategoriesList";
+import SearchBar from "../searchBar/SearchBar";
 import "./navBar.css";
 
 export default function Navbar() {
@@ -17,30 +18,16 @@ export default function Navbar() {
   return (
     <nav>
       <div className="nav-wrapper">
-        <Link to="/" className="brand-logo center">
-          E-Commerce
+        <Link to="/" className="logo hide-on-down">
+          syar<span>D</span>ev
         </Link>
-        <ul id="nav-mobile" className="left hide-on-small-only">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link
-              className="dropdown-btn"
-              to="/products/All"
-              onMouseEnter={() => setDrpActive(true)}
-              onMouseLeave={() => setDrpActive(false)}
-            >
-              <div className="drp-header">
-                Products <i className="material-icons right">arrow_drop_down</i>
-              </div>
+        <a href="#" data-target="mob-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
 
-              {drpActive && <CategoriesList />}
-            </Link>
-          </li>
-        </ul>
+        <SearchBar className="center" />
 
-        <ul id="nav-mobile" className="right hide-on-down">
+        <ul id="nav-mobile" className="hide-on-down">
           <li>
             {!isAuth ? (
               <Link to="login">Login</Link>

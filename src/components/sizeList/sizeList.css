@@ -1,0 +1,21 @@
+.size-list{
+    display: flex;
+    position: relative;
+}
+
+.size-section .size-list button.btn-flat{
+    margin: 0 1px;
+    line-height: initial;
+    border-radius: 5px;
+    padding: auto;
+}
+
+.active-size {
+    background-color: #dbdbdb !important;
+}
+
+.size-section{
+    position: absolute;
+    left: 0;
+    top: 50%;
+}

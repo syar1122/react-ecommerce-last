@@ -1,0 +1,31 @@
+.color-list{
+    
+    display: flex;
+}
+.color-outline{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 3px;
+
+}
+
+.color{
+    display: inline-block;
+    position: relative;
+    
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+
+.color-active{
+    border:3px solid black;
+    padding: 2px;
+    
+}

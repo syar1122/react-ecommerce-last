@@ -68,7 +68,7 @@ div .products-page .container{
 }
 
 @media(min-width:900px) {
-    .container .products{
+    .container.products{
         width:90%;
     }
 }

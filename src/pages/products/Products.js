@@ -1,35 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import "./products.css";
 
 import { useNavigate, useParams } from "react-router";
-import { useGetProductsQuery } from "../../services/app.api";
+import {
+  useGetProductsQuery,
+  useGetProductsWithQueryQuery,
+} from "../../services/app.api";
 import { addToCart, removeFromCart } from "../../features/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import PreLoade from "../../components/preLoader/PreLoade";
+import ProductCard from "../../components/productCard/ProductCard";
 
 export default function Products() {
-  let { data = [], isFetching, isSuccess } = useGetProductsQuery();
-  let { catName } = useParams();
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
+  let { catName, subCat } = useParams();
+  console.log(subCat);
+  let queryStr = `mainCat=${catName}&subCat=${subCat}`;
+  console.log(queryStr);
+
+  let {
+    data = [],
+    isFetching,
+    isSuccess,
+  } = useGetProductsWithQueryQuery(queryStr);
+  console.log(data.products, subCat, catName);
   let { cartItems } = useSelector((state) => state.cart);
-  let products;
+  let { products } = data;
   const cartProductId = [];
   cartItems.forEach((cartItem) => {
     cartProductId.push(cartItem._id);
   });
 
-  console.log("cartItems", cartItems);
+  console.log(subCat);
 
-  if (catName !== "All") {
-    products = data.filter((el) => {
-      return el.category === catName;
-    });
-  } else {
-    products = data;
-  }
+  // console.log(products);
 
-  console.log(catName);
+  // if (products && catName !== "All") {
+  //   filteredProduct = products.filter((el) => {
+  //     console.log(el);
+  //     return el.categories.name === catName;
+  //   });
+  //   console.log(filteredProduct);
+  // }
 
   return (
     <>
@@ -38,52 +49,15 @@ export default function Products() {
         <div className="container products">
           <div className="products-page">
             <div className="title">
-              <h2>{catName}</h2>
+              {!subCat && <h2>{catName}</h2>}
+              {subCat && <h2>{subCat}</h2>}
             </div>
 
             <div className="product-list">
               {products &&
-                products.map((product, index) => {
+                data.products.map((product, index) => {
                   return (
-                    <div class="card" key={index}>
-                      <div class="card-image">
-                        <img src={product.image} alt={product.name} />
-                        <span class="card-title">{`$ ${product.price} USD`}</span>
-                      </div>
-                      <div class="card-content">
-                        <h5>{product.name}</h5>
-                        <div className="spacer"></div>
-                        {cartProductId.includes(product._id) ? (
-                          <button
-                            className="remove-cart btn"
-                            onClick={() => {
-                              dispatch(removeFromCart(product._id));
-                            }}
-                          >
-                            remove
-                          </button>
-                        ) : (
-                          <button
-                            className="add-cart btn"
-                            onClick={() => {
-                              cartProductId.push(product._id);
-                              let cartProduct = { ...product, count: 1 };
-                              dispatch(addToCart(cartProduct));
-                            }}
-                          >
-                            Add to cart
-                          </button>
-                        )}
-                        <button
-                          className="more-detail btn-flat"
-                          onClick={() => {
-                            navigate(`/product/${product._id}`);
-                          }}
-                        >
-                          More Details ...
-                        </button>
-                      </div>
-                    </div>
+                    <ProductCard product={product} key={index}></ProductCard>
                   );
                 })}
             </div>

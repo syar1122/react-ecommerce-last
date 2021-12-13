@@ -3,6 +3,7 @@ import SampleProduct from "../sampleProduct/SampleProduct";
 import "./trendingSection.css";
 
 export default function TrendingSection({ products }) {
+  console.log(products);
   return (
     <div className="trending-section">
       <div className="container">
@@ -10,9 +11,9 @@ export default function TrendingSection({ products }) {
           <h3 className="header">Trending</h3>
         </div>
         <div className="products">
-          <SampleProduct product={products[0]} />
-          <SampleProduct product={products[1]} />
-          <SampleProduct product={products[2]} />
+          {products.map((product, index) => {
+            return <SampleProduct product={product} key={index} />;
+          })}
         </div>
       </div>
     </div>

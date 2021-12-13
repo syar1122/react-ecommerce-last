@@ -36,7 +36,7 @@ export default function Cart() {
                   return (
                     <tr key={index}>
                       <td>
-                        <h6>{item.name}</h6>
+                        <h6>{item.title}</h6>
                       </td>
                       <td>
                         <AddToCart count={item.count} id={item._id} />
@@ -64,6 +64,7 @@ export default function Cart() {
               className="btn red"
               type="button"
               onClick={() => {
+                navigate("/products/All");
                 dispatch(clearCart());
               }}
             >
