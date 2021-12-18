@@ -1,71 +1,47 @@
-.nav-wrapper{
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
 }
 
-nav{
-    box-shadow: initial !important;
-    background-color: var(--primary-clr) !important;
+nav {
+  box-shadow: initial !important;
+  background-color: var(--primary-clr) !important;
 }
 
-nav .brand-logo{
-    font-family: 'Corinthia', cursive;
-    font-size: 35px;
-    font-weight: 700;
-    margin: 0 10px;
-    display: block;
-    position: relative;
+nav .brand-logo {
+  font-family: "Corinthia", cursive;
+  font-size: 35px;
+  font-weight: 700;
+  margin: 0 10px;
+  display: block;
+  position: relative;
 }
 
-
-
-
-nav ul a.cart-link i{
-    display: inline;
-    text-align: center;
-
+nav .sidenav-trigge {
+  float: left !important;
+  position: relative !important;
+  z-index: 1 !important;
+  height: 56px !important;
+  margin: 0 18px !important;
 }
 
-nav ul li a.auth-drop-down i.right{
-    margin-left:.2rem;
+nav ul a.cart-link i {
+  display: inline;
+  text-align: center;
 }
 
-
-
-nav a.auth-drop-down{
-position: relative;
-display: flex;
+nav ul li a.auth-drop-down i.right {
+  margin-left: 0.2rem;
 }
 
-nav ul#nav-mobile a:hover{
-    background-color: rgba(0, 0, 0, 0) !important;
+nav a.auth-drop-down {
+  position: relative;
+  display: flex;
 }
 
-@media (max-width:792px) {
-    
-    nav .nav-wrapper .logo{
-        display: inline-block;
-        padding: 5px 20px;
-    }
-
-    .nav-wrapper .search {
-        width: 100%;
-        display: inline-flex;
-        justify-content: center;
-    }
-
-    .nav-wrapper .search input{
-        width: 90%;
-    }
-
-    
+nav ul#nav-mobile a:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 /* serch barr */
-
-
-
-
-
-

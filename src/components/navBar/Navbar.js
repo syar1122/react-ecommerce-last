@@ -25,7 +25,7 @@ export default function Navbar() {
         <Link to="#" data-target="mob-demo" className="sidenav-trigger">
           <i className="material-icons">menu</i>
         </Link>
-        <div
+        {/* <div
           className="hide-on-med-and-down"
           style={{
             display: "flex",
@@ -33,9 +33,9 @@ export default function Navbar() {
             left: "50%",
             transform: "translateX(-50%)",
           }}
-        >
-          <SearchBar />
-        </div>
+        > */}
+        <SearchBar />
+        {/* </div> */}
 
         <ul id="nav-mobile" className="">
           <li className="hide-on-small-only">
