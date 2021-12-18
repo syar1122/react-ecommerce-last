@@ -3,7 +3,7 @@
     display: flex;
 }
 .color-outline{
-    position: relative;
+    position: static;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./heroSection.css";
 
 export default function HeroSection() {
@@ -11,9 +12,9 @@ export default function HeroSection() {
           Give a gift of comfort...
         </h5>
 
-        <button className="waves-effect waves-teal white-text btn-flat">
+        <Link className="white-text btn" to="/products/Men">
           Shop Now
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -1,3 +1,6 @@
+div.add-to-cart{
+    width: fit-content;
+}
 .add-to-cart form{
     display: flex;
     position: relative;
@@ -30,7 +33,7 @@ box-shadow: none !important;
 .add-to-cart form button{
     position: relative;
     display: block;
-    color: white;
+    color: var(--text-clr);
   width: 32px;
   height: 32px;
   padding: auto;

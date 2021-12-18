@@ -15,14 +15,15 @@ import Register from "./pages/register/Register";
 
 function App() {
   document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".sidenav");
+    let elems = document.querySelectorAll(".sidenav");
     var instances = M.Sidenav.init(elems, {});
   });
-
   return (
     <>
       <Navbar />
-      <CategoriesHeader></CategoriesHeader>
+      <div className="hide-on-small-only">
+        <CategoriesHeader></CategoriesHeader>
+      </div>
       <SideNav></SideNav>
       <Routes>
         <Route path="/" element={<Home />} />

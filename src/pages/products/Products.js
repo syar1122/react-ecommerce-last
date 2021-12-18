@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import "./products.css";
 
 import { useNavigate, useParams } from "react-router";
-import {
-  useGetProductsQuery,
-  useGetProductsWithQueryQuery,
-} from "../../services/app.api";
-import { addToCart, removeFromCart } from "../../features/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useGetProductsWithQueryQuery } from "../../services/app.api";
+
+import { useSelector } from "react-redux";
 import PreLoade from "../../components/preLoader/PreLoade";
 import ProductCard from "../../components/productCard/ProductCard";
 
@@ -19,7 +16,7 @@ export default function Products() {
 
   let {
     data = [],
-    isFetching,
+    isLoading,
     isSuccess,
   } = useGetProductsWithQueryQuery(queryStr);
   console.log(data.products, subCat, catName);
@@ -44,9 +41,13 @@ export default function Products() {
 
   return (
     <>
-      {isFetching && <PreLoade />}
-      {isSuccess && data && (
-        <div className="container products">
+      <div className="container products">
+        {isLoading && (
+          <div className="preload-wrapper">
+            <PreLoade />
+          </div>
+        )}
+        {isSuccess && data && (
           <div className="products-page">
             <div className="title">
               {!subCat && <h2>{catName}</h2>}
@@ -62,8 +63,8 @@ export default function Products() {
                 })}
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }

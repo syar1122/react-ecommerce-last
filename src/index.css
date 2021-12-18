@@ -1,8 +1,16 @@
+:root{
+  --primary-clr:#333d29;
+  --text-clr:#fff;
+  --accent-clr: #582f0e;
+  --bg-clr:#c2c5aa;
+}
+
 body {
   margin: 0;
   font-family:'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-clr);
 }
 
 code {

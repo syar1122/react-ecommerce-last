@@ -1,0 +1,72 @@
+.wrapper{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-wrapper{
+    width: 35vmax;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-clr);
+    border: 3px solid var(--primary-clr);
+    border-radius: 1rem;
+}
+
+.signup-wrapper .signup-header{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    padding:10px 1rem;
+    background-color: var(--primary-clr);
+    color: white;
+}
+
+.signup-wrapper div.signup-form{
+    display: flex;
+    flex-flow:column nowrap ;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.signup-form div.row{
+    min-width: 280px;
+}
+
+ .signup-form div.input-field{
+    margin-bottom: 0;
+}
+
+.signup-form div.input-field input:focus{
+    border-bottom: 1px solid var(--primary-clr) !important;
+    box-shadow: 0 1px 0 0 var(--primary-clr) !important;
+}
+
+.signup-form div.input-field input:focus + label{
+    color: var(--primary-clr) !important;
+}
+.signup-form button.btn{
+    width: 100%;
+    background-color: var(--primary-clr);
+    border-radius: 1rem;
+    box-shadow: initial;
+}
+
+.wrapper .brand-logo{
+    font-family: 'Corinthia', cursive;
+    font-size: 3rem;
+    color: var(--primary-clr);
+
+}
+
+.wrapper p > a{
+    color: var(--accent-clr);
+}

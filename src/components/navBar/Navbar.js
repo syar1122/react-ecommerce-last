@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../features/userSlice";
 import CartCount from "../cartCount/CartCount";
-import CategoriesList from "../categoriesList/CategoriesList";
 import SearchBar from "../searchBar/SearchBar";
+import UserDropdown from "../userDropdown/UserDropdown";
+import UserSubMenu from "../userSubMenu/UserSubMenu";
 import "./navBar.css";
 
 export default function Navbar() {
-  let [drpActive, setDrpActive] = useState(false);
   const { isAuth } = useSelector((state) => state.user);
+  const [subMenu, setSubMenu] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -18,27 +19,42 @@ export default function Navbar() {
   return (
     <nav>
       <div className="nav-wrapper">
-        <Link to="/" className="logo hide-on-down">
+        <Link to="/" className="brand-logo">
           syar<span>D</span>ev
         </Link>
-        <a href="#" data-target="mob-demo" class="sidenav-trigger">
-          <i class="material-icons">menu</i>
-        </a>
+        <Link to="#" data-target="mob-demo" className="sidenav-trigger">
+          <i className="material-icons">menu</i>
+        </Link>
+        <div
+          className="hide-on-med-and-down"
+          style={{
+            display: "flex",
+            position: "relative",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        >
+          <SearchBar />
+        </div>
 
-        <SearchBar className="center" />
-
-        <ul id="nav-mobile" className="hide-on-down">
-          <li>
+        <ul id="nav-mobile" className="">
+          <li className="hide-on-small-only">
             {!isAuth ? (
               <Link to="login">Login</Link>
             ) : (
               <Link
-                to="/"
+                to="#"
                 onClick={() => {
-                  dispatch(logout());
+                  setSubMenu(!subMenu);
                 }}
+                onMouseLeave={() => setSubMenu(false)}
+                style={{ textTransform: "capitalize" }}
+                className="auth-drop-down"
               >
-                logout<i className="material-icons right">arrow_drop_down</i>
+                <i className="material-icons left">account_circle</i>
+                <UserDropdown></UserDropdown>
+                <i className="material-icons right">arrow_drop_down</i>
+                {subMenu && <UserSubMenu></UserSubMenu>}
               </Link>
             )}
           </li>

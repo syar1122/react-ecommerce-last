@@ -1,0 +1,16 @@
+a.auth-drop-down ul.auth-sub-menu{
+    position: absolute;
+    top:100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: .2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+}
+a.auth-drop-down ul.auth-sub-menu a{
+    color: black;
+}

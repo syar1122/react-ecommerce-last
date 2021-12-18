@@ -1,14 +1,14 @@
-div.sidenav{
+div.sidenav {
     height: 100vh;
-    background-color: #ee6e73;
-    color: white;
+    background-color: var(--primary-clr);
+    color: var(--text-clr);
     z-index: 99999;
 }
 
-.sidenav a.logo{
+.sidenav a.brand-logo {
     font-family: 'Corinthia', cursive;
     font-weight: 700;
-    color: white;
+    color: var(--text-clr);
     font-size: 54px;
     font-weight: 700;
     display: flex;
@@ -21,34 +21,104 @@ div.sidenav{
     position: relative;
 }
 
-.sidenav .search{
+.sidenav a.brand-logo span{
+    color: var(--accent-clr);
+}
+
+.sidenav .search {
     display: flex;
     width: 90%;
     margin-top: 15px;
 }
 
-.sidenav .cat-header{
+.sidenav .cat-header {
     position: relative !important;
     flex-direction: column;
     justify-content: start;
     height: auto;
 }
 
-.sidenav .cat-header a.dropdown-btn{
+.sidenav .cat-header div.drp-header{
+    padding: 0;
+}
+
+.sidenav .cat-header a.dropdown-btn {
     display: block;
     width: 100%;
     font-size: 1.2rem;
-    margin:5px 0;
+    margin: 5px 0;
     padding: 15px 10px;
 }
 
-.sidenav .nav-section{
+.sidenav .nav-section {
     display: flex;
     flex-direction: column;
+
+}
+
+.sidenav a.auth-drop-down i.right{
+    margin-left:.2rem;
+}
+
+
+
+.sidenav a.auth-drop-down{
+position: relative;
+display: flex;
+color: white;
+    width: 100%;
+    font-size: 1.2rem;
+    margin: 5px 0;
+    padding: 15px 10px;
+
+}
+
+.sidenav a.auth-drop-down ul.auth-sub-menu{
+    position: absolute;
+    top:100%;
+    left: 10px;
+    transform: translateX(0);
+    border-radius: .2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--text-clr);
+    min-width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+}
+.sidenav a.auth-drop-down ul.auth-sub-menu a{
+    color: var(--accent-clr);
+    padding: 0 15px !important;
+}
+.sidenav a.auth-drop-down ul.auth-sub-menu a i{
+    color: var(--accent-clr);
     
 }
 
-.sidenav .register-section{
+.sidenav a:hover{
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.sidenav .register-section {
     display: flex;
-    
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+}
+
+.sidenav .register-section a.btn,
+a.btn-flat {
+    border-radius: 99px;
+    color: var(--text-clr);
+    margin: 10px 15px;
+}
+
+.sidenav .register-section a.btn{
+    background-color: white;
+    color: var(--primary-clr);
+}
+
+.sidenav .register-section a.btn:hover{
+    color: var(--text-clr);
 }

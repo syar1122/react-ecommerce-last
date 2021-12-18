@@ -83,7 +83,12 @@ export default function ProductDetail() {
                 <button
                   className="btn"
                   onClick={() => {
-                    let cartProduct = { ...product, count: 1 };
+                    let cartProduct = {
+                      ...product,
+                      count: 1,
+                      size: size,
+                      color: color,
+                    };
                     dispatch(addToCart(cartProduct));
                   }}
                 >
@@ -91,8 +96,9 @@ export default function ProductDetail() {
                 </button>
               ) : (
                 <button
+                  className="btn red"
                   onClick={() => {
-                    dispatch(removeFromCart(data._id));
+                    dispatch(removeFromCart(product._id));
                   }}
                 >
                   REMOVE FROM CART

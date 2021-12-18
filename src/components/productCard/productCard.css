@@ -7,6 +7,7 @@
     min-width: 300px;
     width: 300px;
     max-width: 400px;
+    border-radius: 1rem;
   }
 
 .tag-sale {
@@ -50,7 +51,7 @@
     background: #fff;
     width: 100px;
     height: 100px;
-    color: #4FDAA4;
+    color: var(--primary-clr);
     border-radius: 50%;
     font-size: 25px;
     text-align: center;
@@ -65,12 +66,12 @@
   
   .product-link:hover {
     text-decoration: none;
-    color: #4FDAA4;
+    color: var(--primary-clr);
   }
   
   
   .hover-link {
-    background-color: #4FDAA4;
+    background-color: var(--bg-clr);
     position: absolute;
     left: 0;
     top: 0;
@@ -92,7 +93,7 @@
     width: 78%;
   }
   .product-description p{
-    color: #C4C4C4;
+    color: var(--accent-clr);
   }
   
   .product-description p.category-name {
@@ -102,10 +103,10 @@
   .product-description .price {
     display: inline-block;
     width: 20%;
-    font-size: 23px;
+    font-size: 20px;
     text-align: right;
     font-weight: bold;
-    color: #2DD493;
+    color: var(--accent-clr);
   }
   
   .product-option {
@@ -131,24 +132,7 @@
     border-radius: 50%;
   }
   
-  .product-color li.red {
-    background-color: #F75375;
-  }
-  .product-color li.blue {
-    background-color: #53A0F7;
-  }
-  .product-color li.green {
-    background-color: #59CFAF;
-  }
-  .product-color li.gray {
-    background-color: #C7C7C7;
-  }
-  .product-color li.black {
-    background-color: #4E5156;
-  }
-  .product-color li.dark-blue {
-    background-color: #2060AF;
-  }
+
   
   .product-container:hover {
     box-shadow: 0px 10px 25px -2px rgba(0,0,0,0.36);

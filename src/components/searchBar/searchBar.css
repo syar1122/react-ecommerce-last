@@ -9,11 +9,12 @@
     background-color: white;
     width: 45vmax;
     height: 3rem;
-    padding: 0px 5px;
+    padding: 0px 5px 0 15px;
+    
 }
 
 .search input{
-    
+    color: var(--primary-clr);
     background-color: transparent;
     flex-grow: 1;
     height: 100%;
@@ -40,20 +41,9 @@ box-shadow: none !important;
     padding: auto;
     height: 30px;
     width: 30px;
+    background-color: var(--primary-clr);
+    color: var(--text-clr);
   border: none;
   border-radius: 9999px;
 }
 
-
-
-
-@media (max-width:500px) {
-    :root{
-        font-size: 14px;
-    }
-    .search form button.add-btn .material-icons{
-        font-size: 1rem;}
-
-        .search form button.remove-btn .material-icons{
-            font-size: 1rem;}
-}

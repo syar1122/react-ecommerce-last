@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import M from "materialize-css";
 import { useDispatch, useSelector } from "react-redux";
 import AddToCart from "../../components/addToCart/AddToCart";
 import { clearCart } from "../../features/cartSlice";
@@ -9,6 +9,7 @@ import "./cart.css";
 export default function Cart() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   let { cartItems } = useSelector((state) => state.cart);
   let sum = 0;
   cartItems.forEach((element) => {
@@ -37,6 +38,16 @@ export default function Cart() {
                     <tr key={index}>
                       <td>
                         <h6>{item.title}</h6>
+                        <div className="sub-info">
+                          <span className="helper-text">{item.color}</span>
+                          <span
+                            className="helper-text"
+                            style={{ margin: "0 10px" }}
+                          >
+                            -
+                          </span>
+                          <span className="helper-text">{item.size}</span>
+                        </div>
                       </td>
                       <td>
                         <AddToCart count={item.count} id={item._id} />

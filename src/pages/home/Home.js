@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import M from "materialize-css";
 import HeroSection from "../../components/heroSection/HeroSection";
 import NewArrives from "../../components/newArivesProducts/NewArrives";
 import PreLoade from "../../components/preLoader/PreLoade";

@@ -5,7 +5,7 @@ nav ul li a span.badge {
     margin: 0;
     float: right;
     min-width: initial;
-    color: white;
+    color: var(--text-clr);
     background-color: transparent;
     border-radius: 1rem;
 

@@ -7,13 +7,14 @@
 }
 
 .product-detail .img-wrapper{
-    height: calc(75vh);
+    height: calc(80vh);
     padding: 5px;
     position: relative;
     margin-top: 5px;
     max-width: 350px;
     min-width: 350px;
-    width: auto;
+    flex: 1;
+    
 }
 
 .product-detail .img-wrapper img{
@@ -24,6 +25,7 @@
 
 .product-detail .detail-wrapper{
     font-family: 'Oswald',sans-serif;
+    flex: 1;
     display: flex;
     flex-flow: column nowrap;
     margin: 1rem;

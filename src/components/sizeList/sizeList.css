@@ -11,7 +11,8 @@
 }
 
 .active-size {
-    background-color: #dbdbdb !important;
+    background-color: var(--primary-clr) !important;
+    color: var(--text-clr) !important;
 }
 
 .size-section{

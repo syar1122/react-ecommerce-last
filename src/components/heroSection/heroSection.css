@@ -23,7 +23,8 @@
     background-color: rgba(50, 50, 50, 0.4);
 }
 
-.hero-section .content button{
+.hero-section .content .btn{
+    background-color: var(--primary-clr);
     margin:2rem 0px;
 }
 

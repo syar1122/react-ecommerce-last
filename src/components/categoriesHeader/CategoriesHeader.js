@@ -6,7 +6,7 @@ import CategoriesList from "../categoriesList/CategoriesList";
 import "./categoriesHeader.css";
 
 export default function CategoriesHeader() {
-  let { data, isFetching, err } = useGetMainCategoriesQuery();
+  let { data } = useGetMainCategoriesQuery();
   let [drpActive, setDrpActive] = useState(0);
   let categories;
   if (data) {
@@ -18,6 +18,7 @@ export default function CategoriesHeader() {
         categories.map((cat, index) => {
           return (
             <Link
+              key={index}
               className="dropdown-btn"
               to={`/products/${cat.name}`}
               onMouseEnter={() => setDrpActive(index + 1)}

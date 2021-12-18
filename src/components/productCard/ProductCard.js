@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="col-md-3">
       <div className="product-container">
-        <div className="tag-sale"></div>
+        {/* <div className="tag-sale"></div> */}
         <div className="product-image">
           <span className="hover-link"></span>
           <Link to={`/product/${product._id}`} className="product-link">

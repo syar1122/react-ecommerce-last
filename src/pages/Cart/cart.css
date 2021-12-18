@@ -1,3 +1,9 @@
+tr td>h6{
+    font-size: 1.6rem;
+}
+
+
+
 div.actions{
     display: flex;
     flex-flow: row nowrap;
@@ -15,6 +21,13 @@ div.actions .btn,.btn-flat{
 
 .actions div.sum h5{
     margin: .5rem 0;
+}
+div.sub-info{
+    display: flex;
+    flex-flow: row nowrap;
+    color:#6b6b6b;
+    font-size: .8rem;
+    justify-content: start;
 }
 
 @media (max-width:500px){

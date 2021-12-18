@@ -21,7 +21,7 @@ export default function ColorList({ colors, changeColor }) {
                 }
                 onClick={(e) => {
                   setColor(cuColor.code);
-                  changeColor(cuColor.code);
+                  changeColor(cuColor.color);
                 }}
                 style={{ borderColor: cuColor.code }}
                 key={index}
